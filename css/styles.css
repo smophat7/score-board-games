@@ -11,6 +11,10 @@
 }
 
 
+html {
+  background-color: var(--text-light);
+}
+
 /* Nav-bar Overrides */
 .navbar-custom {
   background-color: var(--p);

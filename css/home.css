@@ -1,0 +1,51 @@
+/* Styles for the home screen */
+
+
+/* Header Section */
+.header-container {
+  background-color: var(--p-dark);
+  height: calc(100vh - 56px);
+}
+
+.header-content {
+  text-align: center;
+  color: var(--text-light);
+}
+
+
+.header-container img {
+  width: 20rem;;
+}
+
+.header-container .btn {
+  background-color: var(--s);
+  color: var(--text-light);
+  margin: 0 0.5rem;
+  border-color: var(--s);
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    height: calc(100vh - 92px);
+  }
+}
+
+
+/* Explanation w/ Pictures Section */
+.explain-with-pictures h3 {
+  color: var(--s);
+}
+
+.explain-with-pictures .btn {
+  background-color: var(--p);
+  color: var(--text-light);
+  margin: 0 0.5rem;
+  border-color: var(--p);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .hr-divider{
+    display: none;
+  }
+}
