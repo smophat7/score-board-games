@@ -19,7 +19,7 @@
   <!-- Nav-Bar -->
   <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
     <a class="navbar-brand" href="">ScoreBoard Games</a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="1500" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
@@ -48,12 +48,12 @@
   <div class="header-container container-fluid">
     <div class="row h-100 px-2">
       <div class="header-content mx-auto align-self-center px-2">
-        <h1>Track your games.</h1>
-        <p>A little competiton never hurt anybody.</p>
-        <img src="images/red-dice.png" alt="dice">
+        <h1 data-aos="zoom-out" data-aos-duration="2000">Track your games.</h1>
+        <p data-aos="zoom-out" data-aos-duration="2000">A little competiton never hurt anybody.</p>
+        <img src="images/red-dice.png" alt="dice" data-aos="zoom-out" data-aos-duration="2000">
         <br>
-        <a href="" class="btn btn-lg">Sign Up</a>
-        <a href="" class="btn btn-lg">Record a Game</a>
+        <a href="" class="btn btn-lg" data-aos="fade-up">Sign Up</a>
+        <a href="" class="btn btn-lg" data-aos="fade-up">Record a Game</a>
       </div>
     </div>
   </div>
@@ -71,8 +71,6 @@
       </div>
     </div>
 
-    <hr class="hr-divider">
-
     <div class="row align-items-center py-5">
       <div class="col-md-6 px-4 order-md-12">
         <img src="images/ticket-to-ride-boys-shadow.jpg" alt="boys playing Ticket to Ride" class="img-fluid">
@@ -83,8 +81,6 @@
         <a href="" class="btn btn-lg mb-4">Create Group</a>
       </div>
     </div>
-
-    <hr class="hr-divider">
 
     <div class="row align-items-center py-5">
       <div class="col-md-6 px-4">
@@ -149,7 +145,7 @@
     </div>
   </div>
 
-  
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -157,6 +153,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/9a2188d50d.js" crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
 </body>
 
 </html>
