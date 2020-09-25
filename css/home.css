@@ -54,6 +54,8 @@
 /* Features w/ Icons */
 .feature-icons-container {
   text-align: center;
+  background-color: var(--p);
+  color: var(--text-light);
 }
 
 .feature-icons-container p {
@@ -66,9 +68,3 @@
   margin: 1rem;
   font-size: 5rem;
 }
-
-/* @media (min-width: 768px) {
-  .feature-icons-container .col-sm-6 {
-    width: 100%;
-  }
-} */

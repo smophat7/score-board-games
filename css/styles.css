@@ -11,9 +11,12 @@
 }
 
 
+/* Global settings */
 html {
   background-color: var(--text-light);
+  color: var(--text-dark);
 }
+
 
 /* Nav-bar Overrides */
 .navbar-custom {
@@ -38,4 +41,21 @@ html {
 .navbar i.fas {
   color: var(--s);
   margin: 0 0.5rem;
+}
+
+
+/* Footer */
+.footer {
+  background-color: var(--s);
+  color: var(--text-light);
+}
+
+.footer i.fab {
+  color: var(--text-light);
+  margin: 0.1rem;
+  /* font-size: 2rem; */
+}
+
+.copyright {
+  text-align: center;
 }
