@@ -1,0 +1,36 @@
+.page-content {
+  background-color: var(--p-dark);
+}
+
+
+/* Side Menu */
+.side-menu {
+  max-width: 250px;
+  background-color: var(--p-dark);
+}
+
+.side-menu .btn {
+  margin-top: 1.5rem;
+}
+
+.side-menu .btn-custom {
+  background-color: var(--s);
+  color: var(--text-light);
+  border-color: var(--s);
+}
+
+.col-2 {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .col-2 {
+    display: inline;
+  }
+}
+
+
+/* Dashboard Content */
+.dashboard-content {
+  background-color: var(--text-light);
+}

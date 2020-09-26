@@ -8,28 +8,25 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- Animate On Scroll library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Scrollbar Custom CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-  s<link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/side-nav.css">
+  <!-- Scrollbar Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
+
+  <!-- <link rel="stylesheet" href="css/side-nav.css"> -->
   <!-- <link rel="icon" href="images/favicon.ico"> -->
 
-  <!-- Font Awesome JS -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Contrail+One&family=Encode+Sans+Expanded&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/styles.css">
 
   <title>DashBoard - ScoreBoard Games</title>
 </head>
 
 <body>
 
-
-  <div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar">
+  <!-- <div class="wrapper"> -->
+  <!-- Sidebar -->
+  <!-- <nav id="sidebar">
       <div class="sidebar-header">
         <h3>Bootstrap Sidebar</h3>
       </div>
@@ -75,61 +72,27 @@
         </li>
       </ul>
 
+    </nav> -->
+
+  <!-- Page Content -->
+  <!-- <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <h1>This is a test</h1>
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+          <span>Toggle Sidebar</span>
+        </button>
+      </div>
     </nav>
-
-    <!-- Page Content -->
-    <div id="content">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <h1>This is a test</h1>
-          <button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-align-left"></i>
-            <span>Toggle Sidebar</span>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Header -->
-      <!-- <div class="header-container container-fluid">
-        <div class="row h-100 px-2 pt-1 pb-3">
-          <div class="header-content mx-auto align-self-center px-2">
-            <h1 data-aos="zoom-out" data-aos-duration="1500">Track your games.</h1>
-            <p data-aos="zoom-out" data-aos-duration="1500">A little competiton never hurt anybody.</p>
-            <img src="images/red-dice.png" alt="dice" data-aos="zoom-out" data-aos-duration="2000">
-            <br>
-            <a href="" class="btn btn-lg mb-1" data-aos="fade-up" data-aos-delay="1300">Sign Up</a>
-            <a href="" class="btn btn-lg" data-aos="fade-up" data-aos-delay="1600">Record a Game</a>
-          </div>
-        </div>
-      </div> -->
-
-
-      <!-- Footer -->
-      <!-- <div class="footer p-5">
-        <div class="row w-75 mx-auto">
-          <div class="col-sm-6">
-            <p><a href="https://michalsnik.github.io/aos/" target="_blank">Animate on Scroll Library</a> by <strong>michalsnik</strong></p>
-            <p>Icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome</a></p>
-          </div>
-          <div class="row-sm-6">
-            <a href="">
-              <p><i class="fab fa-github"></i>See GitHub repo here</p>
-            </a>
-            <a href="https://spencermoffat.com" target="_blank">More from Spencer Moffat</a>
-          </div>
-        </div>
-        <p class="copyright">© 2020 Spencer Moffat</p>
-        <div class="image-credits">
-        </div>
-      </div> -->
-    </div>
   </div>
+  </div> -->
 
 
 
   <!-- Top Nav-Bar -->
-  <!-- <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
+  <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
     <a class="navbar-brand" href="">ScoreBoard Games</a>
     <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="1500" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -153,12 +116,73 @@
         </li>
       </ul>
     </div>
-  </nav> -->
+  </nav>
+
+
+  <!-- Rest of the Page (minus footer) -->
+  <div class="row page-content no-gutters">
+
+    <!-- Side menu -->
+    <div class="side-menu col-2 h-100 px-3">
+      <div class="dropdown">
+        <button class="btn btn-light btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Name of Group
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Other Gaming Group Name</a>
+          <a class="dropdown-item" href="#">Other Gaming Group Name</a>
+          <hr>
+          <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Create New Group</a>
+        </div>
+      </div>
+      <a href="" class="btn btn-custom btn-block">Dashboard</a>
+      <a href="" class="btn btn-custom btn-block">My Stats</a>
+      <a href="" class="btn btn-custom btn-block">Head to Head</a>
+      <a href="" class="btn btn-custom btn-block">Collection</a>
+      <a href="" class="btn btn-custom btn-block">History</a>
+      <a href="" class="btn btn-custom btn-block">Members</a>
+    </div>
+
+    <div class="col dashboard-content py-3 px-4">
+      <h1>Group DashBoard</h1>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+      <p>stuff is here now</p>
+    </div>
+  </div>
 
 
 
 
 
+  <!-- Footer -->
+  <div class="footer p-5">
+    <div class="row w-75 mx-auto">
+      <div class="col-sm-6">
+        <p><a href="https://michalsnik.github.io/aos/" target="_blank">Animate on Scroll Library</a> by <strong>michalsnik</strong></p>
+        <p>Icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome</a></p>
+      </div>
+      <div class="row-sm-6">
+        <a href="">
+          <p><i class="fab fa-github"></i>See GitHub repo here</p>
+        </a>
+        <a href="https://spencermoffat.com" target="_blank">More from Spencer Moffat</a>
+      </div>
+    </div>
+    <p class="copyright">© 2020 Spencer Moffat</p>
+    <div class="image-credits">
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -169,11 +193,11 @@
   <script src="https://kit.fontawesome.com/9a2188d50d.js" crossorigin="anonymous"></script>
 
   <!-- jQuery Custom Scroller CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
-  <script src="js/side-nav.js"></script>
+  <!-- <script src="js/side-nav.js"></script> -->
 
-  <script >
+  <script>
     AOS.init({
       once: true
     });
