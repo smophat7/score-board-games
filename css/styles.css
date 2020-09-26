@@ -14,9 +14,20 @@
 /* Global settings */
 html {
   background-color: var(--text-light);
-  color: var(--text-dark);
 }
 
+body {
+  color: var(--text-dark);
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Contrail One', cursive;
+}
+
+/* p {
+  font-family: 'Encode Sans Expanded', sans-serif;
+} */
 
 /* Nav-bar Overrides */
 .navbar-custom {
@@ -25,6 +36,7 @@ html {
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
+  font-family: 'Black Han Sans', sans-serif;
   color: var(--text-light);
 }
 
