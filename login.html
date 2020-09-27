@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- Animate On Scroll library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Contrail+One&family=Encode+Sans+Expanded&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/login.css">
   <link rel="icon" href="images/favicon.ico">
@@ -16,55 +19,61 @@
 
 <body>
 
-  <!-- Nav-Bar -->
-  <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
-    <a class="navbar-brand" href="">ScoreBoard Games</a>
-    <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="1500" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ml-auto d-lg-flex align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href=""><i class="fas fa-info-circle"></i>About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=""><i class="fas fa-question-circle"></i>How-To</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=""><i class="fas fa-users"></i>Create Group</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=""><i class="fas fa-plus-circle"></i>Record Game</a>
-        </li>
-        <li>
-          <a class="nav-link" href="" style="font-size: 2.5rem"><i class="fas fa-user-circle fas-7x"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <!-- <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div> -->
+      <img class="img-fluid d-none d-md-flex bg-image col-md-4 col-lg-6" src="images/monopoly-from-above-wine.jpg" alt="Monopoly party from above">
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container d-flex flex-wrap justify-content-center">
+            <a href="index.html" class="btn"><h1>ScoreBoard Games</h1></a>
+            <form>
 
+              <div class="form-row">
+                <div class="col-sm-6">
+                  <div class="form-label-group">
+                    <input type="firstName" id="inputFirstName" class="form-control" placeholder="First name" required autofocus>
+                    <label for="inputEmail">First name</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-label-group">
+                    <input type="lastName" id="inputLastName" class="form-control" placeholder="Last name" required autofocus>
+                    <label for="inputEmail">Last name</label>
+                  </div>
+                </div>
+              </div>
 
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
 
-  <h1>Create a login page here or maybe implement it as a pop-up modal</h1>
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
 
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Retype password" required>
+                <label for="inputPassword">Retype password</label>
+              </div>
 
+              <button class="btn btn-primary btn-block btn-submit mb-2" type="submit">Sign up</button>
+              <button class="btn btn-primary btn-block btn-submit mb-2" type="submit">Already have an account?</button>
+              <div class="text-center">
+                <a class="small" href="#">Forgot password?</a>
+              </div>
+            </form>
 
-
-
-
-  <!-- Header -->
-  <div class="header-container container-fluid">
-    <div class="row h-100 px-2 pt-1 pb-3">
-      <div class="header-content mx-auto align-self-center px-2">
-        <h1 data-aos="zoom-out" data-aos-duration="1500">Track your games.</h1>
-        <p data-aos="zoom-out" data-aos-duration="1500">A little competiton never hurt anybody.</p>
-        <img src="images/red-dice.png" alt="dice" data-aos="zoom-out" data-aos-duration="2000">
-        <br>
-        <a href="" class="btn btn-lg mb-1" data-aos="fade-up" data-aos-delay="1300">Sign Up</a>
-        <a href="" class="btn btn-lg" data-aos="fade-up" data-aos-delay="1600">Record a Game</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
+
 
 
 
@@ -72,11 +81,13 @@
   <div class="footer p-5">
     <div class="row w-75 mx-auto">
       <div class="col-sm-6">
-          <p><a href="https://michalsnik.github.io/aos/" target="_blank">Animate on Scroll Library</a> by <strong>michalsnik</strong></p>
-          <p>Icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome</a></p>
+        <p>Icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome</a></p>
+        <p>Photo of Monopoly party by <strong>cottonbro</strong> from <a href="https://www.pexels.com/" target="_blank">Pexels</a></p>
       </div>
       <div class="row-sm-6">
-        <a href=""><p><i class="fab fa-github"></i>See GitHub repo here</p></a>
+        <a href="">
+          <p><i class="fab fa-github"></i>See GitHub repo here</p>
+        </a>
         <a href="https://spencermoffat.com" target="_blank">More from Spencer Moffat</a>
       </div>
     </div>
