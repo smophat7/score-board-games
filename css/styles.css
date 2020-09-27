@@ -54,9 +54,22 @@ h1, h2, h3, h4, h5 {
 
 
 /* Footer */
-.footer {
+.footer{
   background-color: var(--s);
   color: var(--text-light);
+}
+
+.footer-logo {
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.footer .btn {
+  background-color: var(--p-dark);
+  color: var(--text-light);
+}
+
+.footer h3 {
+  text-align: left;
 }
 
 .footer i.fab {
@@ -65,6 +78,16 @@ h1, h2, h3, h4, h5 {
   /* font-size: 2rem; */
 }
 
+.footer .image-credits {
+  font-size: 0.8rem;
+}
+
 .copyright {
   text-align: center;
+}
+
+@media (min-width: 576px) {
+  .footer hr {
+    display: none;
+  }
 }
