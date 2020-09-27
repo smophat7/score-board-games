@@ -1,0 +1,12 @@
+.group-member-names {
+  max-width: 500px;
+  margin: 30px;
+}
+
+.group-member-names .card {
+  margin: 30px auto;
+}
+
+.group-member-names .btn {
+  background-color: var(--p-light);
+}

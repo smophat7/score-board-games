@@ -50,6 +50,10 @@
   padding: 30px;
 }
 
+.dashboard-content h1 {
+  text-align: center;
+}
+
 .dashboard-content h3 {
   color: var(--s)
 }
@@ -65,5 +69,6 @@
 
   .dashboard-content h1 {
     padding: 30px;
+    text-align: left;
   }
-}
+s}
