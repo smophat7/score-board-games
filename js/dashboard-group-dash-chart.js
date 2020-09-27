@@ -85,7 +85,8 @@ new Chart(document.getElementById("daysOfWeekChart"), {
         display: false
       },
       legend: {
-        display: false
+        display: true,
+        position: "left"
       }
     }
 });
