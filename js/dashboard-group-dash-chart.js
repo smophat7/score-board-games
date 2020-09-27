@@ -41,7 +41,7 @@ new Chart(document.getElementById('percentWonChart'), {
 new Chart(document.getElementById("gamesPlayedChart"), {
   type: 'pie',
   data: {
-    labels: ["Monopoly", "Risk", "Catan", "Ticke to Ride", "Sequence"],
+    labels: ["Monopoly", "Risk", "Catan", "Ticket to Ride", "Sequence"],
     datasets: [{
       backgroundColor: ["red", "green", "blue", "purple", "orange"],
       data: [45, 33, 5, 16, 22]
