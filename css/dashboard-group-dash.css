@@ -1,0 +1,13 @@
+h3 {
+  text-align: center;
+}
+
+.group-dashboard-chart canvas {
+  width: 95%;
+  height: 95%;
+  position: relative;
+}
+
+.card-body {
+  width: 100%;
+}

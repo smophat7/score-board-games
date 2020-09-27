@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="See stats about your board games!">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
   <!-- Animate On Scroll library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -16,8 +17,9 @@
   <!-- <link rel="icon" href="images/favicon.ico"> -->
 
   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Contrail+One&family=Encode+Sans+Expanded&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard-general.css">
+  <link rel="stylesheet" href="css/dashboard-group-dash.css">
 
   <title>DashBoard - ScoreBoard Games</title>
 </head>
@@ -93,7 +95,7 @@
 
   <!-- Top Nav-Bar -->
   <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
-    <a class="navbar-brand" href="">ScoreBoard Games</a>
+    <a class="navbar-brand" href="index.html">ScoreBoard Games</a>
     <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="1500" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -111,8 +113,17 @@
         <li class="nav-item">
           <a class="nav-link" href=""><i class="fas fa-plus-circle"></i>Record Game</a>
         </li>
-        <li>
-          <a class="nav-link" href="" style="font-size: 2.5rem"><i class="fas fa-user-circle fas-7x"></i></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle" style="font-size: 2.7rem"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="dashboard-group-dash.html">Dashboard</a>
+            <a class="dropdown-item" href="#">Groups</a>
+            <a class="dropdown-item" href="#">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Sign out</a>
+          </div>
         </li>
       </ul>
     </div>
@@ -120,9 +131,19 @@
 
 
   <!-- Rest of the Page (minus footer) -->
-  <div class="row page-content no-gutters">
+  <!-- Side menu - mobile -->
+    <div class="mobile-menu justify-content-around align-items-center">
+      <a href="" class="btn btn-custom"><i class="fas fa-chart-line"></i></a>
+      <a href="" class="btn btn-custom"><i class="fas fa-user"></i></a>
+      <a href="" class="btn btn-custom"><i class="fas fa-people-arrows"></i></a>
+      <a href="" class="btn btn-custom"><i class="fas fa-dice"></i></a>
+      <a href="" class="btn btn-custom"><i class="fas fa-history"></i></a>
+      <a href="" class="btn btn-custom"><i class="fas fa-users"></i></a>
+    </div>
 
-    <!-- Side menu -->
+  <div class="row page-content m-0">
+
+    <!-- Side menu - larger screens -->
     <div class="side-menu col-2 h-100 px-3">
       <div class="dropdown">
         <button class="btn btn-light btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,21 +164,59 @@
       <a href="" class="btn btn-custom btn-block">Members</a>
     </div>
 
-    <div class="col dashboard-content py-3 px-4">
+    <!-- Actual Dashboard part of the page -->
+    <div class="col dashboard-content py-3 p-2">
       <h1>Group DashBoard</h1>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
-      <p>stuff is here now</p>
+
+      <div class="row my-3 mx-0">
+
+        <div class="col-lg-6 py-3">
+          <div class="card">
+            <div class="card-body mx-auto">
+              <h3 class="card-title">Percent of Games Won</h3>
+              <div class="group-dashboard-chart">
+                <canvas id="percentWonChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 py-3 align-self-center">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Games Played</h3>
+              <div class="group-dashboard-chart">
+                <canvas id="gamesPlayedChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row my-3 py-3 mx-0">
+
+        <div class="col-lg-6 py-3">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Frequency of Play</h3>
+              <div class="group-dashboard-chart">
+                <canvas id="playFrequencyChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 py-3">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Days of the Week Breakdown</h3>
+              <div class="group-dashboard-chart">
+                <canvas id="daysOfWeekChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -170,6 +229,7 @@
     <div class="row w-75 mx-auto">
       <div class="col-sm-6">
         <p><a href="https://michalsnik.github.io/aos/" target="_blank">Animate on Scroll Library</a> by <strong>michalsnik</strong></p>
+        <p>Charts enhanced by <strong><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></strong></p>
         <p>Icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome</a></p>
       </div>
       <div class="row-sm-6">
@@ -191,6 +251,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/9a2188d50d.js" crossorigin="anonymous"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q==" crossorigin="anonymous"></script>
+  <!-- Custom chart data and setup -->
+  <script src="js/dashboard-group-dash-chart.js"></script>
 
   <!-- jQuery Custom Scroller CDN -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script> -->
