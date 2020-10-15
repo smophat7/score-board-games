@@ -1,20 +1,15 @@
-.game-search-form {
-  padding: 0 30px;
+form {
+  text-align: center;
 }
 
-.search-results {
-  padding: 0 30px;
+.empty-collection-message {
+  text-align: center;
 }
-
-/* .card {
-  text-align: left;
-} */
 
 .btn-custom-game-search {
   background-color: var(--p);
   color: var(--text-light);
   border-color: var(--p);
-  margin-left: 15px;
 }
 
 .btn-custom-add {
@@ -23,13 +18,36 @@
   border-color: var(--p);
 }
 
-
 img {
   margin-right: 20px;
 }
 
+.no-games-message {
+  padding: 0 30px;
+  text-align: center;
+}
+
+
 @media (min-width: 576px) {
-  img {
-    display: block;
+  form {
+    text-align: left;
   }
+
+  .empty-collection-message {
+    text-align: left;
+  }
+
+  .search-results {
+    padding: 0 30px;
+  }
+
+  .game-search-form {
+    padding: 0 30px;
+  }
+
+  .no-games-message {
+    padding: 0;
+    text-align: left;
+  }
+
 }
