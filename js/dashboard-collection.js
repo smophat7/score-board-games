@@ -25,6 +25,10 @@ document.getElementById("gameSearchSubmit").addEventListener("click", event => {
       //   console.log("Invalid API submission: 404 error received");
       // }
 
+
+      // some games are coming back with "null" values for these things, so I should check for that
+      // also, some are coming back with things like 0-0 min where the data is there but clearly wrong
+
       let results = "";
       for (let i = 0; i < json.games.length; i++) {
         let game = json.games[i];

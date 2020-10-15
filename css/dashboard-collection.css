@@ -10,6 +10,13 @@
   text-align: left;
 } */
 
+.btn-custom-game-search {
+  background-color: var(--p);
+  color: var(--text-light);
+  border-color: var(--p);
+  margin-left: 15px;
+}
+
 .btn-custom-add {
   background-color: var(--p);
   color: var(--text-light);
