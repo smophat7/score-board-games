@@ -1,0 +1,28 @@
+.game-search-form {
+  padding: 0 30px;
+}
+
+.search-results {
+  padding: 0 30px;
+}
+
+/* .card {
+  text-align: left;
+} */
+
+.btn-custom-add {
+  background-color: var(--p);
+  color: var(--text-light);
+  border-color: var(--p);
+}
+
+
+img {
+  margin-right: 20px;
+}
+
+@media (min-width: 576px) {
+  img {
+    display: block;
+  }
+}
