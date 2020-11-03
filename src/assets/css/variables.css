@@ -1,0 +1,12 @@
+/* Color Scheme */
+:root {
+    --p: #1cafc3;
+    --p-light: #65e1f6;
+    --p-dark: #007f93;
+    --s: #f2993b;
+    --s-light: #ffca6b;
+    --s-dark: #ba6b00;
+    --text-light: #fafafa;
+    --text-dark: #263238;
+  }
+  
