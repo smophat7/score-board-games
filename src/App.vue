@@ -20,7 +20,7 @@
               <i class="fas fa-user-circle" style="font-size: 2.7rem"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <router-link :to="'dashboard'" class="dropdown-item">DashBoard</router-link>
+              <router-link :to="'dashboard/group'" class="dropdown-item">DashBoard</router-link>
               
               <!-- Need to figure these ones out too -->
               <a class="dropdown-item" href="#">Groups</a>
@@ -34,6 +34,7 @@
       </div>
     </nav>
 
+    <!-- Page content -->
     <router-view/>
 
     <!-- Footer -->
@@ -89,7 +90,7 @@ h1, h2, h3, h4, h5 {
 /* Nav-bar Overrides */
 .navbar-custom {
   background-color: var(--p);
-  height: 56px;
+  height: 70px;
 }
 
 .navbar-custom .navbar-brand,

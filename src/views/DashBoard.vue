@@ -33,11 +33,11 @@
   background-color: var(--p-dark);
   text-align: center;
   height: 100%;
-  min-height: calc(100vh - 56px);       /* Don't know if both are necessary?? */
+  min-height: calc(100vh - 70px);       /* Don't know if both are necessary?? */
 }
 
 .dashboard-content {
-  min-height: calc(100vh - 56px);       /* Don't know if both are necessary?? */
+  min-height: calc(100vh - 70px);       /* Don't know if both are necessary?? */
   padding: 5px;
 }
 

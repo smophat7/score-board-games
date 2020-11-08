@@ -97,7 +97,7 @@
 /* Header Section */
 .header-container {
   background-color: var(--p-dark);
-  height: calc(100vh - 56px);
+  height: calc(100vh - 70px);
 }
 
 .header-content {
