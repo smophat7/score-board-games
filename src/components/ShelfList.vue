@@ -13,7 +13,7 @@
             <input
               class="btn btn-danger"
               type="button"
-              value="Remove from Shelf"
+              value="Remove"
               @click="removeFromShelf(game)"
             />
           </div>

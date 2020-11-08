@@ -1,10 +1,12 @@
 <template>
   <div class="shelf">
-    <h1>Game Shelf</h1>
-    <p>Keep track of all the games your group plays. Grow your collection.</p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchGamesModal">
-      Search Games
-    </button>
+      <div class="heading">
+        <h1>Game Shelf</h1>
+        <p>Keep track of all the games your group plays. Grow your collection.</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchGamesModal">
+        Search Games
+        </button>
+      </div>
     <div class="modal fade" id="searchGamesModal" tabindex="-1" role="dialog" aria-labelledby="searchGamesModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -57,3 +59,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.heading {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    text-align: left;
+  }
+}
+</style>
