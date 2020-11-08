@@ -2,11 +2,12 @@
   <div id="app">
 
     <!-- Nav-Bar -->
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom custom-toggler">
-      <router-link :to="'/'" class="navbar-brand">ScoreBoard Games</router-link>
-      <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="800" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand navbar-dark navbar-custom custom-toggler">
+      <router-link :to="'/'" class="navbar-brand brand-large">ScoreBoard Games</router-link>
+      <router-link :to="'/'" class="navbar-brand brand-small">SBG</router-link>
+      <!-- <button class="navbar-toggler custom-toggler" data-aos="fade-left" data-aos-delay="800" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto d-lg-flex align-items-center">
           <li class="nav-item">
@@ -97,6 +98,10 @@ h1, h2, h3, h4, h5 {
   height: 70px;
 }
 
+.brand-large {
+  display: none;
+}
+
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
   font-family: 'Black Han Sans', sans-serif;
@@ -117,6 +122,18 @@ h1, h2, h3, h4, h5 {
   color: var(--s);
   margin: 0 0.5rem;
 }
+
+
+@media (min-width: 576px) {
+  .brand-large {
+    display: inline-block;
+  }
+
+  .brand-small {
+    display: none;
+  }
+}
+
 
 /* Footer */
 .footer {

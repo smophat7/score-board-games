@@ -41,11 +41,9 @@
                   :alt="game.name + ' game cover'"
                 />
                 <div class="media-body ml-3 my-auto">
-                  <p>{{ game.min_players }} - {{ game.max_players }} players</p>
-                  <p>
-                    {{ game.min_playtime }} - {{ game.max_playtime }} minutes
-                  </p>
-                  <p>Released in {{ game.year_published }}</p>
+                  <p>{{ playerCount(game.min_players, game.max_players) }}</p>
+                  <p>{{ playTime(game.min_playtime, game.max_playtime) }}</p>
+                  <p>{{ releaseYear(game.year_published) }}</p>
 
                   <div v-if="gameOnShelf(game)">
                     <input
@@ -145,6 +143,39 @@ export default {
     gameOnShelf(game) {
       return this.$root.$data.shelf.some((item) => item.id === game.id);
     },
+    playerCount(min, max) {
+      let count = "";
+      if (min === null || max === null) {
+        count += "Unknown player count";
+      } else if (min === max) {
+        if (min === 1) {
+          count += min + " player";
+        } else {
+          count += min + " players";
+        }
+      } else {
+        count += min + "-" + max + " players";
+      }
+      return count;
+    },
+    playTime(min, max) {
+      let count = "";
+      if (min === null || max === null) {
+        count += "Unknown play time";
+      } else if (min === max) {
+        count += min + " minutes";
+      } else {
+        count += min + "-" + max + " minutes";
+      }
+      return count;
+    },
+    releaseYear(year) {
+      if (year === null) {
+        return "Unknown release year";
+      } else {
+        return "Released in " + year;
+      }
+    }
   },
 };
 </script>
