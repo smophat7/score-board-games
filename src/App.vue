@@ -114,9 +114,10 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Footer */
-.footer{
+.footer {
   background-color: var(--s);
   color: var(--text-light);
+  margin-bottom: 65px;
 }
 
 .footer-logo {
@@ -148,6 +149,10 @@ h1, h2, h3, h4, h5 {
 @media (min-width: 768px) {
   .footer hr {
     display: none;
+  }
+
+  .footer {
+    margin-bottom: 0;
   }
 }
 </style>

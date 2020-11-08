@@ -6,7 +6,7 @@ import About from '../views/About.vue'
 import DashBoard from '../views/DashBoard.vue'
 import Group from '../views/Group.vue'
 import Personal from '../views/Personal.vue'
-import Collection from '../views/Collection.vue'
+import Shelf from '../views/Shelf.vue'
 import Members from '../views/Members.vue'
 import RecordGame from '../views/RecordGame.vue'
 
@@ -44,9 +44,9 @@ const routes = [
         component: Personal
       },
       {
-        path: 'collection',
-        name: 'Collection',
-        component: Collection
+        path: 'shelf',
+        name: 'Shelf',
+        component: Shelf
       },
       {
         path: 'members',
