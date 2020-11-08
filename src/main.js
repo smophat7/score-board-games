@@ -4,10 +4,12 @@ import router from './router';
 
 // Mock data to fill stuff in
 import mockShelf from './mock-data/mockShelf.js';
+import mockMembers from './mock-data/mockMembers.js';
 
 let data = {
   // Mock shelf data
-  shelf: mockShelf
+  shelf: mockShelf,
+  members: mockMembers
 };
 
 Vue.config.productionTip = false;

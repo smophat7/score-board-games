@@ -1,9 +1,11 @@
 <template>
   <div class="group">
-    <div class="col dashboard-content py-3 p-2">
-      <h1 data-aos="zoom-in-up" data-aos-delay="500">Group DashBoard</h1>
+    <div class="col p-0">
+      <h1>Group DashBoard</h1>
 
-      <div class="row my-3 mx-0" data-aos="zoom-in-up" data-aos-delay="600">
+      <p>This page is not yet done/working.</p>
+
+      <!-- <div class="row my-3 mx-0" data-aos="zoom-in-up" data-aos-delay="600">
         <div class="col-lg-6 py-3">
           <div class="card">
             <div class="card-body mx-auto">
@@ -54,7 +56,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

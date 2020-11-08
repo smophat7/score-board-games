@@ -13,23 +13,26 @@
             <router-link :to="'/about'" class="nav-link"><i class="fas fa-info-circle"></i>About</router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="'dashboard/record-game'" class="nav-link"><i class="fas fa-plus-circle"></i>Record Game</router-link>
+            <router-link :to="'/dashboard/group'" class="nav-link"><i class="fas fa-chart-line"></i>DashBoard</router-link>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item">
+            <router-link :to="'dashboard/record-game'" class="nav-link"><i class="fas fa-plus-circle"></i>Record Game</router-link>
+          </li> -->
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user-circle" style="font-size: 2.7rem"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            </a> -->
+            <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <router-link :to="'dashboard/group'" class="dropdown-item">DashBoard</router-link>
               
-              <!-- Need to figure these ones out too -->
+              Need to figure these ones out too
               <a class="dropdown-item" href="#">Groups</a>
               <a class="dropdown-item" href="#">Profile</a>
               <div class="dropdown-divider"></div>
-              <!-- <a class="dropdown-item" href="#">Login/Sign out</a> -->
+              <a class="dropdown-item" href="#">Login/Sign out</a>
               <router-link :to="'/login'" class="dropdown-item">Login/Sign out</router-link>
-            </div>
-          </li>
+            </div> -->
+          <!-- </li> -->
         </ul>
       </div>
     </nav>
@@ -61,6 +64,7 @@
             <p>Photo of Monopoly board by <strong>Suzy Hazelwood</strong> from <a href="https://www.pexels.com/" target="_blank">Pexels</a></p>
             <p>Photo of crowned chess piece by <strong>Pixabay</strong> from <a href="https://www.pexels.com/" target="_blank">Pexels</a></p>
             <p>Photo of boys playing Ticket to Ride by <strong>cottonbro</strong> from <a href="https://www.pexels.com/" target="_blank">Pexels</a></p>
+            <p>Photo for default profile picture by <strong>Othmar</strong> from <a href="https://www.pexels.com/" target="_blank">Pexels</a></p>
           </div>
           <hr class="my-3">
         </div>

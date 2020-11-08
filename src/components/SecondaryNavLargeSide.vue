@@ -16,7 +16,7 @@
       <i class="fas fa-dice"></i>
       <h5>Game Shelf</h5>
     </router-link>
-    <router-link :to="'shelf'" class="btn">
+    <router-link :to="'members'" class="btn">
       <i class="fas fa-users"></i>
       <h5>Members</h5>
     </router-link>
@@ -43,6 +43,7 @@ export default {
 .large-side-nav {
   display: none;
   text-align: center;
+  padding-top: 15px;
 }
 
 a {
