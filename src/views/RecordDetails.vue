@@ -25,11 +25,11 @@
     </div>
     <form>
       <div class="form-group">
-        <label for="dateSelection">Date Played</label>
+        <label for="dateSelection">Date Played (required)</label>
         <InputDate />
       </div>
       <div class="form-group">
-        <label for="descriptionInput">Description</label>
+        <label for="descriptionInput">Description (optional)</label>
         <textarea
           class="form-control"
           id="descriptionInput"
