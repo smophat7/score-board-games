@@ -17,14 +17,14 @@
             <router-link :to="'/dashboard/group'" class="nav-link"><i class="fas fa-chart-line"></i>DashBoard</router-link>
           </li>
           <!-- <li class="nav-item">
-            <router-link :to="'dashboard/record-game'" class="nav-link"><i class="fas fa-plus-circle"></i>Record Game</router-link>
+            <router-link :to="'/dashboard/record-game/select-game-played'" class="nav-link"><i class="fas fa-plus-circle"></i>Record Game</router-link>
           </li> -->
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user-circle" style="font-size: 2.7rem"></i>
             </a> -->
             <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <router-link :to="'dashboard/group'" class="dropdown-item">DashBoard</router-link>
+              <router-link :to="'/dashboard/group'" class="dropdown-item">DashBoard</router-link>
               
               Need to figure these ones out too
               <a class="dropdown-item" href="#">Groups</a>

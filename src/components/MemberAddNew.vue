@@ -98,7 +98,9 @@ export default {
   },
   methods: {
     addMember() {
+      let newId = Math.max.apply(Math, this.$root.$data.members.map(function(person) {return person.id;})) + 1;  // Finds highest id # in members array and adds 1
       let newMember = {
+        id: newId,
         firstName: this.firstName,
         lastName: this.lastName,
         dateJoined: new Date(),

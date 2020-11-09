@@ -1,5 +1,6 @@
 let mockMembers = [
     {
+        id: 1,
         firstName: "Kathy",
         lastName: "Wyatt",
         dateJoined: new Date("October 18, 2020 11:13:00"),
@@ -8,6 +9,7 @@ let mockMembers = [
         profilePicture: "profile-cross-eyed.jpg"
     },
     {
+        id: 2,
         firstName: "Jim",
         lastName: "Austin",
         dateJoined: new Date("September 11, 2020 10:29:00"),
@@ -16,6 +18,7 @@ let mockMembers = [
         profilePicture: "portrait-man-with-tongue.jpg"
     },
     {
+        id: 3,
         firstName: "Emma",
         lastName: "Morgan",
         dateJoined: new Date("September 29, 2020 12:57:00"),
@@ -24,6 +27,7 @@ let mockMembers = [
         profilePicture: "portrait-fashionable-woman.jpg"
     },
     {
+        id: 4,
         firstName: "Steven",
         lastName: "Greenberg",
         dateJoined: new Date("November 10, 2020 10:31:00"),

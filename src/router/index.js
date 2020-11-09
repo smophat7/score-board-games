@@ -8,7 +8,11 @@ import Group from '../views/Group.vue'
 import Personal from '../views/Personal.vue'
 import Shelf from '../views/Shelf.vue'
 import Members from '../views/Members.vue'
+import GameplayHistory from '../views/GameplayHistory.vue'
 import RecordGame from '../views/RecordGame.vue'
+import RecordSelectGamePlayed from '../views/RecordSelectGamePlayed.vue'
+import RecordSelectPlayers from '../views/RecordSelectPlayers.vue'
+import RecordSelectGameType from '../views/RecordSelectGameType.vue'
 
 Vue.use(VueRouter)
 
@@ -54,9 +58,31 @@ const routes = [
         component: Members
       },
       {
+        path: 'gameplay-history',
+        name: 'GameplayHistory',
+        component: GameplayHistory
+      },
+      {
         path: 'record-game',
         name: 'RecordGame',
-        component: RecordGame
+        component: RecordGame,
+        children: [
+          {
+            path: 'select-game-played',
+            name: 'RecordSelectGamePlayed',
+            component: RecordSelectGamePlayed
+          },
+          {
+            path: 'select-players',
+            name: 'RecordSelectPlayers',
+            component: RecordSelectPlayers
+          },
+          {
+            path: 'select-game-type',
+            name: 'RecordSelectGameType',
+            component: RecordSelectGameType
+          }
+        ]
       }
     ]
   }

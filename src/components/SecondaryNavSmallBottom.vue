@@ -2,19 +2,19 @@
   <div class="small-bottom-nav">
     <div class="row h-100 align-items-center">
       <div class="col align-self-center">
-        <router-link :to="'group'">
+        <router-link :to="'/dashboard/group'">
           <i class="fas fa-chart-line"></i>
           <h5>Group</h5>
         </router-link>
       </div>
       <div class="col">
-        <router-link :to="'personal'">
+        <router-link :to="'/dashboard/personal'">
           <i class="fas fa-user"></i>
           <h5>My Dash</h5>
         </router-link>
       </div>
       <div class="col">
-        <router-link :to="'record-game'">
+        <router-link :to="'/dashboard/record-game/select-game-played'">
           <i class="fas fa-plus"></i>
           <h5>Record</h5>
         </router-link>
@@ -25,11 +25,11 @@
             <i class="fas fa-bars"></i><h5>More</h5>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <router-link :to="'shelf'" class="dropdown-item"><h5><i class="fas fa-dice"></i> Game Shelf</h5></router-link>
-            <router-link :to="'members'" class="dropdown-item"><h5><i class="fas fa-users"></i> Group Members</h5></router-link>
-            <router-link :to="'shelf'" class="dropdown-item"><h5><i class="fas fa-history"></i> History</h5></router-link>
+            <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-dice"></i> Game Shelf</h5></router-link>
+            <router-link :to="'/dashboard/members'" class="dropdown-item"><h5><i class="fas fa-users"></i> Group Members</h5></router-link>
+            <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-history"></i> History</h5></router-link>
             <div class="dropdown-divider"></div>
-            <router-link :to="'shelf'" class="dropdown-item"><h5><i class="fas fa-cog"></i> Settings</h5></router-link>
+            <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-cog"></i> Settings</h5></router-link>
           </div>
         </div>
       </div>
