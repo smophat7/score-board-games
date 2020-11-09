@@ -13,6 +13,8 @@ import RecordGame from '../views/RecordGame.vue'
 import RecordSelectGamePlayed from '../views/RecordSelectGamePlayed.vue'
 import RecordSelectPlayers from '../views/RecordSelectPlayers.vue'
 import RecordSelectGameType from '../views/RecordSelectGameType.vue'
+import RecordSelectWinner from '../views/RecordSelectWinner.vue'
+import RecordDetails from '../views/RecordDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -81,6 +83,16 @@ const routes = [
             path: 'select-game-type',
             name: 'RecordSelectGameType',
             component: RecordSelectGameType
+          },
+          {
+            path: 'select-winner',
+            name: 'RecordSelectWinner',
+            component: RecordSelectWinner
+          },
+          {
+            path: 'record-details',
+            name: 'RecordDetails',
+            component: RecordDetails
           }
         ]
       }

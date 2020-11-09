@@ -4,21 +4,21 @@
       <router-link
         :to="'/dashboard/record-game/select-game-played'"
         class="btn btn-primary nav-button invisible"
-        >Backward</router-link
+        >Back</router-link
       >
       <h2 class="text-center m-0">Select Game</h2>
       <div v-if="ifGameSelected">
         <router-link
           :to="'/dashboard/record-game/select-players'"
           class="btn btn-primary nav-button"
-          >Forward</router-link
+          >Next</router-link
         >
       </div>
       <div v-else>
         <router-link
           :to="'/dashboard/record-game/select-players'"
           class="btn btn-primary nav-button invisible"
-          >Forward</router-link
+          >Next</router-link
         >
       </div>
     </div>

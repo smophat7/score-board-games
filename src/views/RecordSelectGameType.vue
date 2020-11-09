@@ -1,33 +1,46 @@
 <template>
   <div>
     <div class="d-flex justify-content-around header align-items-center">
-      <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-primary nav-button">Backward</router-link>
+      <router-link
+        :to="'/dashboard/record-game/select-players'"
+        class="btn btn-primary nav-button"
+        >Back</router-link
+      >
       <h2 class="text-center m-0">Select Game Type</h2>
-      <div v-if="ifGameSelected">
+      <div v-if="ifTypeSelected">
         <router-link
-          :to="'/dashboard/record-game/select-players'"
+          :to="'/dashboard/record-game/select-winner'"
           class="btn btn-primary nav-button"
-          >Forward</router-link
+          >Next</router-link
         >
       </div>
       <div v-else>
         <router-link
-          :to="'/dashboard/record-game/select-players'"
+          :to="'/dashboard/record-game/select-winner'"
           class="btn btn-primary nav-button invisible"
-          >Forward</router-link
+          >Next</router-link
         >
       </div>
     </div>
     <div class="row justify-content-center m-0">
-      <div v-for="game in games" :key="game.id" class="col-6 col-lg-4 p-0 text-center">
-        <button class="game-button p-0">
-          <img
-            :src="game.images.medium"
-            :alt="game.name + ' game cover'"
-            style="max-height: 150px"
-          />
-          <h4>{{ game.name }}</h4>
-        </button>
+      <div v-for="type in types" :key="type" class="col-sm-6 p-0 text-center">
+        <div v-if="ifSelected(type)">
+          <button
+            class="type-button type-selected p-0"
+            @click="selectType(type)"
+          >
+            <router-link :to="'/dashboard/record-game/select-winner'">
+              <h4>{{ typeText(type) }}</h4>
+            </router-link>
+          </button>
+        </div>
+        <div v-else>
+          <button class="type-button p-0" @click="selectType(type)">
+            <router-link :to="'/dashboard/record-game/select-winner'">
+              <h4>{{ typeText(type) }}</h4>
+            </router-link>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -37,14 +50,37 @@
 export default {
   name: "RecordSelectGameType",
   methods: {
-    // selectGame: (game) => {
-    //   this.$store.commit("selectGameToRecord", game.id);
-    // },
+    selectType(type) {
+      this.$store.commit("selectTypeToRecord", type);
+    },
+    typeText(typeEnum) {
+      switch (typeEnum) {
+        case this.$root.$data.gameType.POINTS.HIGH_WINS:
+          return "Points (highest wins)";
+        case this.$root.$data.gameType.POINTS.LOW_WINS:
+          return "Points (lowest wins)";
+        case this.$root.$data.gameType.RANKED:
+          return "Ranked";
+        case this.$root.$data.gameType.VS_BOARD:
+          return "Group vs Board";
+      }
+    },
+    ifSelected(type) {
+      return this.$store.state.typeToRecord === type;
+    },
   },
   computed: {
-    // games() {
-    //   return this.$root.$data.shelf;
-    // },
+    types() {
+      let allTypes = [];
+      allTypes.push(this.$root.gameType.POINTS.HIGH_WINS);
+      allTypes.push(this.$root.gameType.POINTS.LOW_WINS);
+      allTypes.push(this.$root.gameType.RANKED);
+      allTypes.push(this.$root.gameType.VS_BOARD);
+      return allTypes;
+    },
+    ifTypeSelected() {
+      return this.$store.state.typeToRecord !== "";
+    },
   },
 };
 </script>
@@ -55,10 +91,35 @@ export default {
 }
 
 .nav-button {
-    height: 40px;
+  height: 40px;
+}
+
+.type-button {
+  width: 250px;
+  height: 80px;
+  margin: 5px;
+  background-color: white;
+  border: 4px solid var(--p-dark);
+  border-radius: 5%;
+}
+
+.type-button:hover {
+  border-color: var(--p);
+}
+
+.type-button a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.type-selected {
+  border-color: var(--s);
+}
+
+h4 {
+  margin: 0;
 }
 
 @media (min-width: 576px) {
- 
 }
 </style>

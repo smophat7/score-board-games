@@ -37,15 +37,15 @@ let mockGameplayHistory = [
         id: 3,
         boardGameId: "levMwXaCM6",
         playersId: [1, 2, 3, 4],
-        winnerId: [3],
+        winnerId: [3, 2],
         type: gameType.POINTS.HIGH_WINS,
-        rankWinToLose: [3, 4, 1, 2],
+        rankWinToLose: [[3, 2], 1, 4],
         points:
             {
                 1: 35,
-                2: 20,
-                3: 58,
-                4: 42
+                2: 42,
+                3: 42,
+                4: 20
             },
         boardWin: false,
         datePlayed: new Date("October 5, 2020 10:29:00"),

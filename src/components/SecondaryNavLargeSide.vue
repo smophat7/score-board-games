@@ -20,7 +20,7 @@
       <i class="fas fa-users"></i>
       <h5>Members</h5>
     </router-link>
-    <router-link :to="'/dashboard/shelf'" class="btn">
+    <router-link :to="'/dashboard/gameplay-history'" class="btn">
       <i class="fas fa-history"></i>
       <h5>History</h5>
     </router-link>

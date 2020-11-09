@@ -27,7 +27,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-dice"></i> Game Shelf</h5></router-link>
             <router-link :to="'/dashboard/members'" class="dropdown-item"><h5><i class="fas fa-users"></i> Group Members</h5></router-link>
-            <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-history"></i> History</h5></router-link>
+            <router-link :to="'/dashboard/gameplay-history'" class="dropdown-item"><h5><i class="fas fa-history"></i> History</h5></router-link>
             <div class="dropdown-divider"></div>
             <router-link :to="'/dashboard/shelf'" class="dropdown-item"><h5><i class="fas fa-cog"></i> Settings</h5></router-link>
           </div>

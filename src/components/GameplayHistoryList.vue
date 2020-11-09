@@ -1,11 +1,12 @@
 <template>
   <div class="plays">
-    <table>
+    <table class="w-100">
       <tr>
         <th>Date</th>
         <th>Game</th>
         <th>Winner</th>
         <th class="player-count">Players</th>
+        <th class="game-type">Type</th>
         <th></th>
       </tr>
       <tr class="play" v-for="play in plays" :key="play.id">
@@ -19,11 +20,13 @@
           {{ gameName(play.boardGameId) }}
         </td>
         <td>
-          {{ playWinnerMember(play.winnerId, play.type, play.boardWin, false) }}
+          {{ playWinnerMember(play.winnerId, play.type, play.boardWin) }}
         </td>
         <td class="player-count">{{ numPlayers(play.playersId) }}</td>
+        <td class="game-type">{{ gameType(play.type) }}</td>
         <td>
-          <button class="more-info-button"
+          <button
+            class="more-info-button"
             type="button"
             data-toggle="modal"
             :data-target="'#moreInfoModal-' + play.id"
@@ -54,16 +57,45 @@
                 </button>
               </div>
               <div class="modal-body">
-                <h5>{{ readableDate(play.datePlayed) }}</h5>
-                <img
-                  :src="gameImage(play.boardGameId)"
-                  :alt="gameName(play.boardGameId) + ' game cover'"
-                />
-                <h5>{{ gameName(play.boardGameId) }}</h5>
-                <!-- <h5 v-for="member in playWinnerMember(play.winnerId, play.type, play.boardWin, true)" :key="member.id">
-                {{ fullName(member) }}</h5> -->
-                <p><strong>Type: </strong>{{ gameType(play.type) }}</p>
-                <p><strong>Description: </strong>{{ play.description }}</p>
+                <div class="info-heading text-center">
+                  <img
+                    :src="gameImage(play.boardGameId)"
+                    :alt="gameName(play.boardGameId) + ' game cover'"
+                  />
+                  <h3>{{ gameName(play.boardGameId) }}</h3>
+                  <h5>{{ readableDate(play.datePlayed) }}</h5>
+
+                  <div v-if="play.boardWin">
+                    <h5>Winner: The Board</h5>
+                  </div>
+                  <div v-else>
+                    <h5 v-for="memberId in play.winnerId" :key="memberId">
+                      Winner: {{ fullName(idToMember(memberId)) }}
+                    </h5>
+                  </div>
+                </div>
+                <div class="info-details">
+                  <p><strong>Type: </strong>{{ gameType(play.type) }}</p>
+
+                  <div v-if="notAgainstBoard(play)">
+                    <p><strong>Standings:</strong></p>
+                    <ol>
+                      <li v-for="ids in play.rankWinToLose" :key="ids">
+                        {{ playerRankings(ids, play) }}
+                      </li>
+                    </ol>
+                  </div>
+                  <div v-else>
+                    <p><strong>Players: </strong></p>
+                    <ul>
+                      <li v-for="memberId in play.playersId" :key="memberId">
+                        {{ fullName(idToMember(memberId)) }}
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p><strong>Description: </strong>{{ play.description }}</p>
+                </div>
               </div>
               <div class="modal-footer">
                 <button
@@ -109,7 +141,7 @@ export default {
         return game.id === gameId;
       }).images.small;
     },
-    playWinnerMember(membersId, type, ifBoardWon, ifReturnList) {
+    playWinnerMember(membersId, type, ifBoardWon) {
       if (type === this.$root.$data.gameType.VS_BOARD) {
         if (ifBoardWon) {
           return "The Board";
@@ -130,11 +162,7 @@ export default {
         });
 
         if (winners.length > 1) {
-          if (ifReturnList) {
-            return winners;
-          } else {
-            return "Multiple";
-          }
+          return "Multiple";
         } else {
           return this.fullName(winners[0]);
         }
@@ -152,8 +180,40 @@ export default {
         case this.$root.$data.gameType.RANKED:
           return "Ranked";
         case this.$root.$data.gameType.VS_BOARD:
-          return "Against the Board";
+          return "Group vs Board";
       }
+    },
+    idToMember(personId) {
+      return this.$root.$data.members.find((member) => {
+        return member.id === personId;
+      });
+    },
+    notAgainstBoard(play) {
+      return play.type !== this.$root.$data.gameType.VS_BOARD;
+    },
+    playerRankings(ids, play) {
+      if (!Array.isArray(ids)) {
+        let result = this.fullName(this.idToMember(ids));
+        if (
+          play.type === this.$root.$data.gameType.POINTS.HIGH_WINS ||
+          play.type === this.$root.$data.gameType.POINTS.LOW_WINS
+        ) {
+          result += ": " + play.points[ids] + " pts";
+        }
+        return result;
+      } else {
+        let result = this.fullName(this.idToMember(ids[0]));
+        for (let i = 1; i < ids.length; i++) {
+          result += ", " + this.fullName(this.idToMember(ids[i]));
+        }
+        if (play.type === this.$root.$data.gameType.POINTS.HIGH_WINS || play.type === this.$root.$data.gameType.POINTS.LOW_WINS) {
+          result += ": " + play.points[ids[0]] + " pts";
+        }
+        return result;
+      }
+    },
+    getPoints(play, id) {
+      return play.points[id];
     },
     // removeFromGamePlayHistory(play) {
     //   this.$root.$data.gameplayHistory.splice(
@@ -176,9 +236,9 @@ th {
 }
 
 .more-info-button {
-    padding: 0;
-    background-color: white;
-    border: none;
+  padding: 0;
+  background-color: white;
+  border: none;
 }
 
 @media (max-width: 576px) {
@@ -186,6 +246,12 @@ th {
     display: none;
   }
   .player-count {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .game-type {
     display: none;
   }
 }

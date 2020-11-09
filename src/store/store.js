@@ -7,6 +7,11 @@ export default new Vuex.Store({
   state: {
     gameToRecord: "",
     membersToRecord: [],
+    typeToRecord: "",
+    groupOrBoardToRecord: null,
+    dateToRecord: new Date(),
+    dateSet: false,
+    descriptionToRecord: "",
   },
 
   getters: {
@@ -23,6 +28,27 @@ export default new Vuex.Store({
     },
     unselectMembersToRecord(state, member) {
       state.membersToRecord.splice(state.membersToRecord.indexOf(member, 0), 1);
+    },
+    selectTypeToRecord(state, type) {
+      state.typeToRecord = type;
+    },
+    selectGroupOrBoardToRecord(state, option) {
+      state.groupOrBoardToRecord = option;
+    },
+    selectDateToRecord(state, date) {
+      state.dateToRecord = date;
+    },
+    changeDescription(state, description) {
+      state.descriptionToRecord = description;
+    },
+    clearRecordValues(state) {
+      state.gameToRecord = "";
+      state.membersToRecord = [];
+      state.typeToRecord = "";
+      state.groupOrBoardToRecord = null;
+      state.dateToRecord = new Date();
+      state.dateSet = false;
+      state.descriptionToRecord = "";
     },
   },
 });
