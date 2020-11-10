@@ -12,11 +12,13 @@ export default new Vuex.Store({
     dateToRecord: new Date(),
     dateSet: false,
     descriptionToRecord: "",
+    pointsToRecord: new Object,
   },
 
   getters: {
     gameToRecord: (state) => state.gameToRecord,
     membersToRecord: (state) => state.membersToRecord,
+    pointsToRecord: (state) => state.pointsToRecord,
   },
 
   mutations: {
@@ -33,6 +35,12 @@ export default new Vuex.Store({
     selectTypeToRecord(state, type) {
       state.typeToRecord = type;
     },
+
+    setPointsToRecord(state, points) {
+      state.pointsToRecord = points;
+    },
+
+
     selectGroupOrBoardToRecord(state, option) {
       state.groupOrBoardToRecord = option;
     },
@@ -50,6 +58,7 @@ export default new Vuex.Store({
       state.dateToRecord = new Date();
       state.dateSet = false;
       state.descriptionToRecord = "";
+      state.pointsToRecord = new Object;
     },
   },
 });

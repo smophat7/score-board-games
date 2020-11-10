@@ -1,34 +1,20 @@
 <template>
   <div>
     <div class="d-flex justify-content-around header align-items-center">
-      <router-link
-        :to="'/dashboard/record-game/select-players'"
-        class="btn btn-primary nav-button"
-        >Back</router-link
-      >
+      <router-link :to="'/dashboard/record-game/select-players'" class="btn btn-primary nav-button">Back</router-link>
       <h2 class="text-center m-0">Select Game Type</h2>
       <div v-if="ifTypeSelected">
-        <router-link
-          :to="'/dashboard/record-game/select-winner'"
-          class="btn btn-primary nav-button"
-          >Next</router-link
-        >
+        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button">Next</router-link>
       </div>
       <div v-else>
-        <router-link
-          :to="'/dashboard/record-game/select-winner'"
-          class="btn btn-primary nav-button invisible"
-          >Next</router-link
-        >
+        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button invisible">Next
+        </router-link>
       </div>
     </div>
     <div class="row justify-content-center m-0">
       <div v-for="type in types" :key="type" class="col-sm-6 p-0 text-center">
         <div v-if="ifSelected(type)">
-          <button
-            class="type-button type-selected p-0"
-            @click="selectType(type)"
-          >
+          <button class="type-button type-selected p-0" @click="selectType(type)">
             <router-link :to="'/dashboard/record-game/select-winner'">
               <h4>{{ typeText(type) }}</h4>
             </router-link>

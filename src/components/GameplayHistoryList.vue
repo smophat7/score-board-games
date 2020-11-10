@@ -161,7 +161,7 @@ export default {
           );
         });
 
-        if (winners.length > 1) {
+        if (winners.length > 1 || Array.isArray(winners[0])) {
           return "Multiple";
         } else {
           return this.fullName(winners[0]);
