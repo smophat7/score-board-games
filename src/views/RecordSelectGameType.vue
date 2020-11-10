@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="d-flex justify-content-around header align-items-center">
-      <router-link :to="'/dashboard/record-game/select-players'" class="btn btn-primary nav-button">Back</router-link>
+      <router-link :to="'/dashboard/record-game/select-players'" class="btn btn-primary nav-button"><i class="fas fa-chevron-left"></i> Back</router-link>
       <h2 class="text-center m-0">Select Game Type</h2>
       <div v-if="ifTypeSelected">
-        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button">Next</router-link>
+        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button">Next <i class="fas fa-chevron-right"></i></router-link>
       </div>
       <div v-else>
-        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button invisible">Next
+        <router-link :to="'/dashboard/record-game/select-winner'" class="btn btn-primary nav-button invisible">Next <i class="fas fa-chevron-right"></i>
         </router-link>
       </div>
     </div>

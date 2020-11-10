@@ -1,20 +1,25 @@
 <template>
   <div>
     <div class="d-flex justify-content-around header align-items-center">
-      <router-link @click.native="addPointsToStore" :to="'/dashboard/record-game/select-game-type'" class="btn btn-primary nav-button">Back</router-link>
-      <h2 class="text-center m-0">Select Game</h2>
+      <router-link @click.native="addPointsToStore" :to="'/dashboard/record-game/select-game-type'" class="btn btn-primary nav-button"><i class="fas fa-chevron-left"></i> Back</router-link>
+      <h2 class="text-center m-0">Enter Points</h2>
       <div v-if="ifPointsEntered">
-        <router-link @click.native="addPointsToStore" :to="'/dashboard/record-game/record-details'" class="btn btn-primary nav-button">Next</router-link>
+        <router-link @click.native="addPointsToStore" :to="'/dashboard/record-game/record-details'" class="btn btn-primary nav-button">Next <i class="fas fa-chevron-right"></i></router-link>
       </div>
       <div v-else>
-        <router-link :to="'/dashboard/record-game/record-details'" class="btn btn-primary nav-button invisible">Next
+        <router-link :to="'/dashboard/record-game/record-details'" class="btn btn-primary nav-button invisible">Next <i class="fas fa-chevron-right"></i>
         </router-link>
       </div>
     </div>
 
-    <div v-for="player in players" :key="player.id">
-      <label :for="player.id">{{ fullName(player.firstName, player.lastName) }}</label>
-      <input v-model.number="points[player.id]" type="number" :id="player.id">
+    <div class="d-flex justify-content-center">
+      <div>
+      <div v-for="player in players" :key="player.id">
+        <input v-model.number="points[player.id]" type="number" :id="player.id">
+        <label :for="player.id">{{ fullName(player.firstName, player.lastName) }}</label>
+      </div>
+
+      </div>
     </div>
 
   </div>
@@ -93,6 +98,14 @@ export default {
 
 .nav-button {
   height: 40px;
+}
+
+
+input {
+  width: 6rem;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 @media (min-width: 576px) {

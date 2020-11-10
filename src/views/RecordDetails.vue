@@ -4,7 +4,7 @@
       <router-link
         :to="'/dashboard/record-game/select-winner'"
         class="btn btn-primary nav-button"
-        >Back</router-link
+        ><i class="fas fa-chevron-left"></i> Back</router-link
       >
       <h2 class="text-center m-0">Add Details</h2>
       <div v-if="ifDateSelected">
