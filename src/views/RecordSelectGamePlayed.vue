@@ -1,56 +1,31 @@
 <template>
   <div>
     <div class="d-flex justify-content-around header align-items-center">
-      <router-link
-        :to="'/dashboard/record-game/select-game-played'"
-        class="btn btn-primary nav-button invisible"
-        >Back</router-link
-      >
+      <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-primary nav-button invisible">Back
+      </router-link>
       <h2 class="text-center m-0">Select Game</h2>
       <div v-if="ifGameSelected">
-        <router-link
-          :to="'/dashboard/record-game/select-players'"
-          class="btn btn-primary nav-button"
-          >Next</router-link
-        >
+        <router-link :to="'/dashboard/record-game/select-players'" class="btn btn-primary nav-button">Next</router-link>
       </div>
       <div v-else>
-        <router-link
-          :to="'/dashboard/record-game/select-players'"
-          class="btn btn-primary nav-button invisible"
-          >Next</router-link
-        >
+        <router-link :to="'/dashboard/record-game/select-players'" class="btn btn-primary nav-button invisible">Next
+        </router-link>
       </div>
     </div>
     <div class="row justify-content-center m-0">
-      <div
-        v-for="game in games"
-        :key="game.id"
-        class="col-6 col-lg-4 p-0 text-center"
-      >
+      <div v-for="game in games" :key="game.id" class="col-6 col-lg-4 p-0 text-center">
         <div v-if="ifSelected(game)">
-          <button
-            class="game-button game-selected p-0"
-            @click="selectGame(game)"
-          >
-            <img
-              :src="game.images.medium"
-              :alt="game.name + ' game cover'"
-              style="max-height: 150px"
-            />
+          <button class="game-button game-selected p-0" @click="selectGame(game)">
+            <img :src="game.images.medium" :alt="game.name + ' game cover'" style="max-height: 150px" />
             <h4>{{ game.name }}</h4>
           </button>
         </div>
         <div v-else>
           <button class="game-button p-0" @click="selectGame(game)">
             <router-link :to="'/dashboard/record-game/select-players'">
-            <img
-              :src="game.images.medium"
-              :alt="game.name + ' game cover'"
-              style="max-height: 150px"
-            />
-            <h4>{{ game.name }}</h4>
-              </router-link>
+              <img :src="game.images.medium" :alt="game.name + ' game cover'" style="max-height: 150px" />
+              <h4>{{ game.name }}</h4>
+            </router-link>
           </button>
         </div>
       </div>
@@ -59,25 +34,25 @@
 </template>
 
 <script>
-export default {
-  name: "RecordSelectGamePlayed",
-  methods: {
-    selectGame(game) {
-      this.$store.commit("selectGameToRecord", game);
+  export default {
+    name: "RecordSelectGamePlayed",
+    methods: {
+      selectGame(game) {
+        this.$store.commit("selectGameToRecord", game);
+      },
+      ifSelected(game) {
+        return this.$store.state.gameToRecord === game;
+      },
     },
-    ifSelected(game) {
-      return this.$store.state.gameToRecord === game;
+    computed: {
+      games() {
+        return this.$root.$data.shelf;
+      },
+      ifGameSelected() {
+        return this.$store.state.gameToRecord !== "";
+      },
     },
-  },
-  computed: {
-    games() {
-      return this.$root.$data.shelf;
-    },
-    ifGameSelected() {
-      return this.$store.state.gameToRecord !== "";
-    },
-  },
-};
+  };
 </script>
 
 <style scoped>
@@ -110,6 +85,7 @@ export default {
 
 .game-selected {
   border-color: var(--s);
+  border-width: 6px;
 }
 
 img {

@@ -22,7 +22,8 @@
         >
       </div>
     </div>
-    <div class="row justify-content-center m-0">
+
+    <!-- <div class="row justify-content-center m-0">
       <div
         v-for="member in members"
         :key="member.id"
@@ -54,6 +55,25 @@
           </button>
         </div>
       </div>
+    </div> -->
+
+    <div class="row justify-content-center m-0">
+      <div v-for="member in members" :key="member.id" class="col-sm-6 col-lg-4 p-0 text-center">
+        <input type="checkbox" :id="member.id+'-checkbox'" :value="member" v-model="checkedMembers">
+        <label :for="member.id+'-checkbox'">
+          <div class="d-flex align-items-center justify-content-center">
+            <div>
+              <img
+                  class="rounded-circle"
+                  :src="'images/' + member.profilePicture"
+                  :alt="fullName(member) + ' profile picture'"
+                  style="width: 150px"
+                />
+                <h4>{{ fullName(member) }}</h4>
+            </div>
+          </div>
+          </label>
+      </div>
     </div>
   </div>
 </template>
@@ -61,12 +81,17 @@
 <script>
 export default {
   name: "RecordSelectPlayers",
+  data() {
+    return {
+      checkedMembers: this.$store.state.membersToRecord
+    }
+  },
   methods: {
-    selectMember(member) {
-      this.$store.commit("selectMembersToRecord", member);
-    },
+    // selectMember(member) {
+    //   this.$store.commit("selectMembersToRecord", member);
+    // },
     unselectMember(member) {
-        this.$store.commit("unselectMembersToRecord", member);
+      this.$store.commit("unselectMembersToRecord", member);
     },
     ifSelected(member) {
       return this.$store.state.membersToRecord.includes(member);
@@ -83,6 +108,11 @@ export default {
       return this.$store.state.membersToRecord !== null;
     },
   },
+  watch: {
+    checkedMembers: function() {
+      this.$store.commit("selectMembersToRecord", this.checkedMembers);
+    }
+  }
 };
 </script>
 
@@ -109,7 +139,7 @@ export default {
 }
 
 .member-button:focus {
-    border-color: var(--p);
+  border-color: var(--p);
 }
 
 .member-button a {
@@ -128,6 +158,40 @@ img {
 h4 {
   font-size: 18px;
   margin-top: 8px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+/* Attempt at custom checkboxes */
+input {
+  opacity: 0;
+  width: 3px;
+  height: 3px;
+}
+
+label {
+  margin: 8px;
+}
+
+label > div {
+  border: solid var(--p-dark) 4px;
+  border-radius: 5%;
+  min-height: 230px;
+  min-width: 230px;
+  margin: 0;
+  padding: 20px;
+}
+
+label > div:hover {
+  border-color: var(--p);
+}
+
+input:focus + label > div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+}
+
+input:checked + label > div {
+  border: solid var(--s) 6px;
 }
 
 @media (min-width: 576px) {

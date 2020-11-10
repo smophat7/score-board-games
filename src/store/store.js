@@ -23,8 +23,9 @@ export default new Vuex.Store({
     selectGameToRecord(state, game) {
       state.gameToRecord = game;
     },
-    selectMembersToRecord(state, member) {
-      state.membersToRecord.push(member);
+    selectMembersToRecord(state, members) {
+      // state.membersToRecord.push(member);
+      state.membersToRecord = members;
     },
     unselectMembersToRecord(state, member) {
       state.membersToRecord.splice(state.membersToRecord.indexOf(member, 0), 1);
