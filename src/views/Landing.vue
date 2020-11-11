@@ -9,8 +9,10 @@
           <p data-aos="zoom-out" data-aos-duration="1000">A little competiton never hurt anybody.</p>
           <img src="images/red-dice.png" alt="dice" data-aos="zoom-out" data-aos-duration="1000">
           <br>
-          <a href="login.html" class="btn btn-lg" data-aos="fade-up" data-aos-delay="900" data-aos-anchor=".header-container">Sign Up</a>
-          <a href="" class="btn btn-lg" data-aos="fade-up" data-aos-delay="1200" data-aos-anchor=".header-container">Record a Game</a>
+          <!-- <a href="login.html" class="btn btn-lg" data-aos="fade-up" data-aos-delay="900" data-aos-anchor=".header-container">Sign Up</a> -->
+          <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-lg" data-aos="fade-up" data-aos-delay="900" data-aos-anchor=".header-container">Sign UP</router-link>
+          <!-- <a href="" class="btn btn-lg" data-aos="fade-up" data-aos-delay="1200" data-aos-anchor=".header-container">Record a Game</a> -->
+          <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-lg" data-aos="fade-up" data-aos-delay="1200" data-aos-anchor=".header-container">Record a Game</router-link>
         </div>
       </div>
     </div>
@@ -26,7 +28,7 @@
         <div class="col-md-6 px-4 align-self-center">
           <h3 class="my-4">Collect data. Analyze stats.</h3>
           <p class="mb-4">Get in depth insights into how you and your gaming group performs. Our data visualization tool makes it easy to see who's ahead and who's playing catch-up.</p>
-          <a href="" class="btn btn-lg mb-4">Record a Game</a>
+          <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-lg mb-4">Record a Game</router-link>
         </div>
       </div>
 
@@ -37,7 +39,7 @@
         <div class="col-md-6 px-4 order-md-1">
           <h3 class="my-4">Assemble your gaming group.</h3>
           <p class="mb-4">Form a group to compete with. Family, friends, coworkers, COVID roommates, whoever you can. Competition is healthy, and track your games for long-term tension.</p>
-          <a href="" class="btn btn-lg mb-4">Create Group</a>
+          <router-link :to="'/dashboard/record-game/select-game-played'" class="btn btn-lg mb-4">Create Group</router-link>
         </div>
       </div>
 
@@ -48,7 +50,7 @@
         <div class="col-md-6 px-4 align-self-center">
           <h3 class="my-4">See who's champ.</h3>
           <p class="mb-4">Discover who's the best player in your gaming group. Or, use our easy to use filtering tool to see who takes first place in a given game, sub-group, or time-frame.</p>
-          <a href="login.html" class="btn btn-lg mb-4">Get Started</a>
+          <router-link :to="'/dashboard/record-game/select-game-played'"  class="btn btn-lg mb-4">Get Started</router-link>
         </div>
       </div>
     </div>
@@ -87,6 +89,11 @@
 </template>
 
 <script>
+import AOS from 'aos';
+
+AOS.init({
+  once: true
+});
   export default {
     name: 'Landing'
   }
@@ -112,7 +119,7 @@
 .header-container .btn {
   background-color: var(--s);
   color: var(--text-light);
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 10px;
   border-color: var(--s);
 }
 
