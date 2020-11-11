@@ -46,9 +46,9 @@ export default {
         case this.$root.$data.gameType.POINTS.LOW_WINS:
           return "Points (lowest wins)";
         case this.$root.$data.gameType.RANKED:
-          return "Ranked";
+          return "Ranked (unfinished)";
         case this.$root.$data.gameType.VS_BOARD:
-          return "Group vs Board";
+          return "Cooperative";
       }
     },
     ifSelected(type) {
