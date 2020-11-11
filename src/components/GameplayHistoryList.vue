@@ -12,11 +12,8 @@
       <tr class="play" v-for="play in plays" :key="play.id">
         <td>{{ readableDate(play.datePlayed) }}</td>
         <td>
-          <img
-            :src="gameImage(play.boardGameId)"
-            :alt="gameName(play.boardGameId) + ' game cover'"
-            style="width: 40px"
-          />
+          <img :src="gameImage(play.boardGameId)" :alt="gameName(play.boardGameId) + ' game cover'"
+            style="width: 40px" />
           {{ gameName(play.boardGameId) }}
         </td>
         <td>
@@ -25,43 +22,24 @@
         <td class="player-count">{{ numPlayers(play.playersId) }}</td>
         <td class="game-type">{{ gameType(play.type) }}</td>
         <td>
-          <button
-            class="more-info-button"
-            type="button"
-            data-toggle="modal"
-            :data-target="'#moreInfoModal-' + play.id"
-          >
+          <button class="more-info-button" type="button" data-toggle="modal" :data-target="'#moreInfoModal-' + play.id">
             <i class="fas fa-info-circle"></i>
           </button>
         </td>
         <!-- Modal (more info) -->
-        <div
-          class="modal fade"
-          :id="'moreInfoModal-' + play.id"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="moreInfoModalLabel"
-          aria-hidden="true"
-        >
+        <div class="modal fade" :id="'moreInfoModal-' + play.id" tabindex="-1" role="dialog"
+          aria-labelledby="moreInfoModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h2 class="modal-title" id="modalLabel">Gameplay Info</h2>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
                 <div class="info-heading text-center">
-                  <img
-                    :src="gameImage(play.boardGameId)"
-                    :alt="gameName(play.boardGameId) + ' game cover'"
-                  />
+                  <img :src="gameImage(play.boardGameId)" :alt="gameName(play.boardGameId) + ' game cover'" />
                   <h3>{{ gameName(play.boardGameId) }}</h3>
                   <h5>{{ readableDate(play.datePlayed) }}</h5>
 
@@ -98,11 +76,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
                   Close
                 </button>
               </div>
@@ -150,6 +124,11 @@ export default {
         }
       } else {
         let winners = [];
+
+        // If there are multiple winners in their own sub-array, break it out just into its elements
+        if (Array.isArray(membersId[0])) {
+          membersId = [...membersId[0]];
+        }
 
         // For each ID value in the play.winnerId array, find the corresponding member object
         // and add it to the winners array just declared
@@ -202,6 +181,12 @@ export default {
         }
         return result;
       } else {
+
+        // If there are multiple members in their own sub-array, break it out just into its elements
+        if (Array.isArray(ids[0])) {
+          ids = [...ids[0]];
+        }
+
         let result = this.fullName(this.idToMember(ids[0]));
         for (let i = 1; i < ids.length; i++) {
           result += ", " + this.fullName(this.idToMember(ids[i]));

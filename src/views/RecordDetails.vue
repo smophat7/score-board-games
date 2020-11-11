@@ -164,7 +164,14 @@ export default {
       } else if (this.$store.state.typeToRecord === this.$root.gameType.POINTS.LOW_WINS ||
         this.$store.state.typeToRecord === this.$root.gameType.POINTS.HIGH_WINS) {
 
-        winners = this.rankPlayers()[0];
+        winners.push(this.rankPlayers()[0]);
+
+        // If there are multiple winners in their own sub-array, break it out just into its elements
+        // so that the returned array is a simple, 1-D array, even if there was a tie for first or something
+        if (Array.isArray(winners[0])) {
+          winners = [...winners[0]];
+        }
+
         return winners;
 
         // let bestScore = this.$store.state.pointsToRecord[this.$store.state.membersToRecord[0]];
